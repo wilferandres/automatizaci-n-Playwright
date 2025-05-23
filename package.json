@@ -1,0 +1,22 @@
+{
+  "name": "automatizaci-n-playwright",
+  "version": "1.0.0",
+  "description": "repositorio creado con temas de automatización co",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilferandres/automatizaci-n-Playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilferandres/automatizaci-n-Playwright/issues"
+  },
+  "homepage": "https://github.com/wilferandres/automatizaci-n-Playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.21"
+  }
+}
