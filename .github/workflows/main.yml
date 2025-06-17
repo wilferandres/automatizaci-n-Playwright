@@ -25,10 +25,9 @@ jobs:
       - name: Instalar Newman
         run: npm install -g newman
 
-      - name: Ejecutar colección Postman
+      - name: Ejecutar colección Postman en “producción”
         run: |
           newman run ./Autogermana.postman_collection.json \
-            --environment ./postman/environments/mi-entorno.postman_environment.json \
             --reporters cli,junit \
             --reporter-junit-export newman-results/results.xml
 
