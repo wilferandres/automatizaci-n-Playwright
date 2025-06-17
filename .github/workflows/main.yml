@@ -27,7 +27,6 @@ jobs:
 
       - name: Ejecutar colección Postman
         run: |
-          # Asumiendo que tu colección está en la raíz del repo
           newman run ./Autogermana.postman_collection.json \
             --environment ./postman/environments/mi-entorno.postman_environment.json \
             --reporters cli,junit \
@@ -35,7 +34,7 @@ jobs:
 
       - name: Publicar reporte JUnit
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: newman-junit-report
           path: newman-results/results.xml
