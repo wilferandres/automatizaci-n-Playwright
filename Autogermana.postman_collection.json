@@ -4,7 +4,7 @@
 		"name": "Autogermana",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "33462157",
-		"_collection_link": "https://valepro.postman.co/workspace/45fb5a7f-c73b-4f2a-aca5-ad22f38be322/collection/33462157-65329a2d-eb91-4e4a-af33-c743332f0f3d?action=share&source=collection_link&creator=33462157"
+		"_collection_link": "https://valepro.postman.co/workspace/AmbienteQA~45fb5a7f-c73b-4f2a-aca5-ad22f38be322/collection/33462157-65329a2d-eb91-4e4a-af33-c743332f0f3d?action=share&source=collection_link&creator=33462157"
 	},
 	"item": [
 		{
@@ -126,10 +126,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"const data = pm.response.json();\r",
+							"const json = pm.response.json();\r",
 							"\r",
 							"pm.test(\"errors contiene el mensaje de correo invalido\"), () => {\r",
-							"    pm.expect(data.errors).to.include(\"El correo electrónico no es válido.\");\r",
+							"    pm.expect(json.errors).to.include(\"El correo electrónico no es válido.\");\r",
 							"}\r",
 							""
 						],
