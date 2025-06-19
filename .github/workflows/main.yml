@@ -1,0 +1,39 @@
+# .github/workflows/postman-newman.yml
+name: Ejecutar colección Postman con Newman
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-postman-collection:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Instalar Newman
+        run: npm install -g newman
+
+      - name: Ejecutar colección Postman en “producción”
+        run: |
+          newman run ./Autogermana.postman_collection.json \
+            --reporters cli,junit \
+            --reporter-junit-export newman-results/results.xml
+
+      - name: Publicar reporte JUnit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman-junit-report
+          path: newman-results/results.xml
